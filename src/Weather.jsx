@@ -1,24 +1,19 @@
 import React from "react";
+import "./Weather.css";
 
 function Weather(props) {
   return (
     <div className="weather-card">
-      <div className="weather-icon"></div>
-      <div className="weather-day">
-        <h3>{props.weather.day}</h3>
-        <h6>{props.weather.max}°</h6>
-        <h6>{props.weather.min}°</h6>
+      <div className="day">
+        {props.weather.day}
       </div>
-      <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-
+      <div className="icon">
+        <i className={`wi wi-${props.weather.icon}`}></i>
+      </div>
+      <div>
+        <span className="max">{props.weather.max}°</span>
+        <span className="min">{props.weather.min}°</span>
+      </div>
     </div>
   );
 }
