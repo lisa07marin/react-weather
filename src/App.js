@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Weather from './Weather'
+import WeatherBar from "./WeatherBar";
+import WeatherBarApi from "./WeatherBarApi";
 
 function App() {
   let weathers = [
@@ -38,7 +39,8 @@ function App() {
   ];
   return (
     <div className="App">
-      {weathers.map((w, i) => (<Weather weather={w} key={i} />))}
+      <WeatherBar weathers={weathers} />
+      <WeatherBarApi />
     </div>
   );
 }
